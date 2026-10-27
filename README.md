@@ -4,6 +4,8 @@ Code and model access instructions for **Mapping Fragrance Reviews to Structured
 
 The domain-fine-tuned model maps a single anonymized review to the publicly listed top, middle, and base notes of its perfume. These are perfume-level weak labels, not a full reconstruction of an individual reviewer's experience. The published model is merged from the best **step-700** checkpoint. Experiments were frozen in July 2026.
 
+Published resources: [code](https://github.com/KangRJ123abc/fragrance-note-prediction) and [step-700 merged model](https://www.modelscope.cn/models/KangRJ123abc/Qwen3.5-4B-Fragrance-Notes). The model download configuration pins revision `d5a8dd6e03631d1301aefc8d73f27c2e52d42971`, not the mutable master branch.
+
 ## What is included
 
 - `src/`: training, dataset construction, domain evaluation, general benchmarks, and exploratory application-transfer code.
@@ -41,9 +43,11 @@ python scripts/download_models.py --role base
 python scripts/predict.py --role finetuned --review "A synthetic example: fresh citrus and a dry woody finish."
 ```
 
-The baseline ModelScope ID and recorded revision come from the original local download metadata; downloaded files must match the frozen SHA-256 manifest. If that revision is no longer served, the helper fails rather than silently substituting another model. The author's fine-tuned ModelScope ID and fixed revision must be filled in `configs/model_sources.json` after the repository is created. Until then use `--model-dir`.
+Both published ModelScope IDs and immutable revisions are configured in `configs/model_sources.json`. The baseline is `unsloth/Qwen3.5-4B`, not the escaped local cache spelling or the separately pretrained `-Base` variant. Its pinned upstream tokenizer config differs from the historical experiment copy only in `tokenizer_class`; the helper applies the included, hash-checked historical config before verifying the frozen artifact manifest. No weights or tokenizer vocabulary are modified. Upstream and fine-tuned file metadata were checked on 2026-10-27 without downloading weights. A missing revision or unrecognized file difference fails validation rather than substituting an updated model.
 
 Downloads are cached under `models/`. Inference generates at most 256 new tokens with thinking disabled; the helper is a first-pass example, not the historical 24-case repair pipeline or a benchmark runner. No guarantee is made that arbitrary review input will produce a valid JSON object.
+
+Text files use LF line endings through `.gitattributes` so `SHA256SUMS.json` agrees across Windows and Linux checkouts. The manifest excludes itself and the local `.git` directory.
 
 ## Training and evaluation
 

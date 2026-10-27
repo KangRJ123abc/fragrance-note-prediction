@@ -10,13 +10,45 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
-from model_files import REPOSITORY_ROOT, read_json_object, verify_files
+from model_files import REPOSITORY_ROOT, calculate_sha256, read_json_object, verify_files
 
 
 # ========== Model source resolution ==========
+
+def install_compatibility_overlays(directory: Path, settings: dict[str, Any]) -> None:
+    """Apply only configured, hash-checked historical compatibility files.
+
+    Args:
+        directory (Path): Downloaded model cache supplied by obtain_model.
+        settings (dict[str, Any]): Role configuration from configs/model_sources.json.
+    Returns:
+        None: Existing frozen files remain intact; recognized upstream files are replaced.
+    Raises:
+        ValueError: A source/target escapes its root or its hash is unrecognized.
+        RuntimeError: Hashing, source reading, or copying fails.
+    """
+    # 步骤1: Permit only explicit public overlays, never an arbitrary model edit.
+    for overlay in settings.get("compatibility_overlays", []):
+        source = (REPOSITORY_ROOT / overlay["source"]).resolve()
+        target = (directory / overlay["target"]).resolve()
+        if not source.is_relative_to(REPOSITORY_ROOT) or not target.is_relative_to(directory.resolve()):
+            raise ValueError("应用兼容配置失败: 路径越界, 上下文: configured overlay")
+        if calculate_sha256(source) != overlay["sha256"]:
+            raise ValueError("应用兼容配置失败: 发布副本哈希不一致, 上下文: overlay source")
+        current = calculate_sha256(target)
+        if current == overlay["sha256"]:
+            continue
+        if current != overlay["upstream_sha256"]:
+            raise ValueError("应用兼容配置失败: 未识别的上游配置, 上下文: overlay target")
+        # 步骤2: Replace only the recognized metadata file, never weights/vocabulary.
+        try:
+            shutil.copyfile(source, target)
+        except OSError as error:
+            raise RuntimeError(f"复制兼容配置失败: {error}, 上下文: file={target.name}") from error
 
 def get_model_settings(role: str) -> dict[str, Any]:
     """Resolve a model role to its frozen download and validation settings.
@@ -52,6 +84,7 @@ def obtain_model(role: str, destination: Path | None = None) -> Path:
     directory = (destination or REPOSITORY_ROOT / settings["cache_directory"]).resolve()
     manifest_path = REPOSITORY_ROOT / settings["hash_manifest"]
     if (directory / "model.safetensors.index.json").is_file():
+        install_compatibility_overlays(directory, settings)
         verify_files(directory, manifest_path)
         return directory
     # 步骤2: Never silently download an unpinned author model or a different base.
@@ -63,6 +96,7 @@ def obtain_model(role: str, destination: Path | None = None) -> Path:
     except Exception as error:
         raise RuntimeError(f"下载模型失败: 请检查ModelScope依赖、版本及网络, 上下文: role={role}") from error
     # 步骤3: Validate bytes rather than trusting only the remote repository label.
+    install_compatibility_overlays(directory, settings)
     verify_files(directory, manifest_path)
     return directory
 

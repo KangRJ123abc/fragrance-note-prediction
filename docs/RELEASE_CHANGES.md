@@ -22,3 +22,27 @@ The companion model's config.json contains one metadata-only edit: `model_name`
 now records the public upstream ID instead of a private server path. All other
 configuration fields and the full weight shards remain unchanged. Public model
 hash manifests identify these release bytes, not the unredacted historical config.
+
+## Published repository integration on 2026-10-27
+
+The code now links the published ModelScope repository and pins its immutable
+revision d5a8dd6e03631d1301aefc8d73f27c2e52d42971. Its nine core file hashes were
+checked using public metadata without downloading weights or running inference.
+
+The baseline download ID is corrected to unsloth/Qwen3.5-4B: the earlier ___
+spelling was an escaped local cache ID. The original fixed revision remains
+5787df4be25ec60f8b26b39d3147157c0f60b2e5. At this revision, the upstream
+tokenizer_config.json has tokenizer_class=TokenizersBackend, while the archived
+experiment file has tokenizer_class=Qwen2TokenizerFast. All other parsed fields
+are equal. The exact historical experiment file is included as
+configs/base_tokenizer_config.json. The download helper replaces only the
+recognized upstream hash with this checked historical file, then verifies the
+full frozen model manifest. An unrecognized hash fails instead of being rewritten.
+This reproduces the stored experiment configuration without changing weights or
+tokenizer.json. It is not evidence of a new tokenizer-equivalence experiment.
+
+Text files are normalized to LF and .gitattributes enforces LF checkouts. This
+corrects the published checksum mismatch caused by Git normalizing a mixed-line-
+ending script. SHA256SUMS.json is refreshed for repository files, including
+.gitattributes. Only synthetic unit tests and metadata checks were performed;
+full model downloads, GPU inference and formal experiment reruns were not done.

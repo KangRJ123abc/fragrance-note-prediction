@@ -12,6 +12,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 # ------ Local imports only; no optional GPU libraries are imported ------
@@ -19,7 +20,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPOSITORY_ROOT / "scripts"))
 sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 from model_files import calculate_sha256, read_json_object, verify_files
-from download_models import get_model_settings, obtain_model
+from download_models import get_model_settings, install_compatibility_overlays, obtain_model
 from predict import build_messages
 
 
@@ -61,15 +62,52 @@ class ReleaseTests(unittest.TestCase):
         """Check baseline source configuration; no arguments/return; raises assertions."""
         # 步骤1: Distinguish original distribution from similarly named base models.
         settings = get_model_settings("base")
-        self.assertEqual(settings["repo_id"], "unsloth/Qwen3___5-4B")
+        self.assertEqual(settings["repo_id"], "unsloth/Qwen3.5-4B")
         self.assertEqual(len(settings["revision"]), 40)
 
     def test_unpublished_model_fails_without_network(self) -> None:
         """Reject missing publication ID; no arguments/return; raises assertions."""
         # 步骤1: An empty fresh directory cannot satisfy the cache or source checks.
         with tempfile.TemporaryDirectory() as directory:
-            with self.assertRaises(ValueError):
-                obtain_model("finetuned", Path(directory))
+            settings = dict(get_model_settings("finetuned"), repo_id=None, revision=None)
+            with patch("download_models.get_model_settings", return_value=settings):
+                with self.assertRaises(ValueError):
+                    obtain_model("finetuned", Path(directory))
+
+    def test_published_model_is_pinned(self) -> None:
+        """Check published configuration; no arguments/return; raises assertions."""
+        # 步骤1: Do not rely on a mutable master branch for paper reproduction.
+        settings = get_model_settings("finetuned")
+        self.assertEqual(settings["repo_id"], "KangRJ123abc/Qwen3.5-4B-Fragrance-Notes")
+        self.assertEqual(settings["revision"], "d5a8dd6e03631d1301aefc8d73f27c2e52d42971")
+
+    def test_known_compatibility_overlay(self) -> None:
+        """Check a synthetic recognized overlay; no arguments/return; raises assertions."""
+        # 步骤1: Use invented bytes and mock the source root, never a real model.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_fixture(root / "frozen.json", "frozen synthetic config")
+            write_fixture(root / "target.json", "upstream synthetic config")
+            settings = {"compatibility_overlays": [{"source": "frozen.json", "target": "target.json",
+                "sha256": calculate_sha256(root / "frozen.json"),
+                "upstream_sha256": calculate_sha256(root / "target.json")}]}
+            with patch("download_models.REPOSITORY_ROOT", root):
+                install_compatibility_overlays(root, settings)
+                install_compatibility_overlays(root, settings)
+            self.assertEqual(calculate_sha256(root / "target.json"), settings["compatibility_overlays"][0]["sha256"])
+
+    def test_unknown_overlay_target_rejected(self) -> None:
+        """Reject unexpected synthetic files; no arguments/return; raises assertions."""
+        # 步骤1: A changed upstream artifact must not be silently rewritten.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_fixture(root / "frozen.json", "frozen synthetic config")
+            write_fixture(root / "target.json", "unknown synthetic config")
+            settings = {"compatibility_overlays": [{"source": "frozen.json", "target": "target.json",
+                "sha256": calculate_sha256(root / "frozen.json"), "upstream_sha256": "0" * 64}]}
+            with patch("download_models.REPOSITORY_ROOT", root):
+                with self.assertRaises(ValueError):
+                    install_compatibility_overlays(root, settings)
 
     def test_prompt_excludes_assistant(self) -> None:
         """Check frozen prompt assembly; no arguments/return; raises assertions."""

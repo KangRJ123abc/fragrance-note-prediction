@@ -1,16 +1,25 @@
 {
   "base": {
-    "repo_id": "unsloth/Qwen3___5-4B",
+    "repo_id": "unsloth/Qwen3.5-4B",
     "revision": "5787df4be25ec60f8b26b39d3147157c0f60b2e5",
     "cache_directory": "models/base",
     "hash_manifest": "configs/base_model_files.json",
-    "source": "Original ModelScope download metadata; not the similarly named pretrained Qwen3.5-4B-Base variant. Remote revision availability has not been tested during release preparation."
+    "source": "Public ModelScope repository at the frozen revision; the ___ spelling was a local escaped cache ID, not a public repository name. Pinned upstream file metadata checked on 2026-10-27. Preserve the historical tokenizer_class compatibility edit through the explicit overlay below.",
+    "compatibility_overlays": [
+      {
+        "target": "tokenizer_config.json",
+        "source": "configs/base_tokenizer_config.json",
+        "upstream_sha256": "ca48933a9ecb73f47228bfab7b3b866f85e76111dfbceb321c0ea83b84514d21",
+        "sha256": "8808c116c7fc4b642db657ba481ffeb3b09a921303850878f1cdd6c040bba12b",
+        "reason": "Preserve the exact experiment tokenizer config: tokenizer_class=Qwen2TokenizerFast instead of upstream TokenizersBackend. All other parsed JSON fields are equal; tokenizer.json and model weights are unchanged."
+      }
+    ]
   },
   "finetuned": {
-    "repo_id": null,
-    "revision": null,
+    "repo_id": "KangRJ123abc/Qwen3.5-4B-Fragrance-Notes",
+    "revision": "d5a8dd6e03631d1301aefc8d73f27c2e52d42971",
     "cache_directory": "models/finetuned-step700",
     "hash_manifest": "configs/finetuned_model_files.json",
-    "source": "Author must fill the actual ModelScope repository and fixed release revision after upload. Local model loading works before publication."
+    "source": "Published full merged step-700 model. All nine core artifact SHA-256 values checked against ModelScope's fixed-revision metadata on 2026-10-27."
   }
 }
