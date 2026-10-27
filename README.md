@@ -4,15 +4,15 @@ Code and model access instructions for **Mapping Fragrance Reviews to Structured
 
 The domain-fine-tuned model maps a single anonymized review to the publicly listed top, middle, and base notes of its perfume. These are perfume-level weak labels, not a full reconstruction of an individual reviewer's experience. The published model is merged from the best **step-700** checkpoint. Experiments were frozen in July 2026.
 
-Published resources: [code](https://github.com/KangRJ123abc/fragrance-note-prediction) and [step-700 merged model](https://www.modelscope.cn/models/KangRJ123abc/Qwen3.5-4B-Fragrance-Notes). The model download configuration pins revision `d5a8dd6e03631d1301aefc8d73f27c2e52d42971`, not the mutable master branch.
+Published resources: [code](https://github.com/KangRJ123abc/fragrance-note-prediction), [formal dataset](https://www.modelscope.cn/datasets/KangRJ123abc/Fragrance-Review-Note-Pyramids), and [step-700 merged model](https://www.modelscope.cn/models/KangRJ123abc/Qwen3.5-4B-Fragrance-Notes). Model and dataset downloads pin immutable revisions, not the mutable master branch.
 
 ## What is included
 
 - `src/`: training, dataset construction, domain evaluation, general benchmarks, and exploratory application-transfer code.
-- `scripts/`: pinned model download, single-review inference, explicit training launcher, file verification, and descriptive post-processing.
+- `scripts/`: pinned model/data download, single-review inference, explicit training launcher, file verification, and descriptive post-processing.
 - Release-time reconstructed length-fallback, fixed-prior and permutation scripts are included, with provenance and unverified historical choices documented in `docs/RECONSTRUCTION.md`. They have not been run on formal data or a model.
 - `configs/`: model sources, artifact hashes, generation settings, and dataset checksums.
-- `data/`: the researcher-constructed 24-request bank and a clearly synthetic format example; no third-party consumer-review text.
+- `data/`: the researcher-constructed 24-request bank, a synthetic format example, and access instructions for the separately published formal reviews. Downloaded files are cached locally and ignored by Git.
 - `results/`: aggregate domain metrics, common-label statistics, and selected general benchmark results.
 - `environment/`: separate historical environment snapshots and minimal dependency lists.
 
@@ -28,6 +28,7 @@ For CPU-only checks without training or model inference:
 python -m unittest discover -s tests -v
 python scripts/verify_files.py --root . --manifest SHA256SUMS.json
 python scripts/download_models.py --role base --dry-run
+python scripts/download_data.py --dry-run
 ```
 
 Install the inference environment separately, then use a local copy of the released ModelScope folder:
@@ -49,12 +50,37 @@ Downloads are cached under `models/`. Inference generates at most 256 new tokens
 
 Text files use LF line endings through `.gitattributes` so `SHA256SUMS.json` agrees across Windows and Linux checkouts. The manifest excludes itself and the local `.git` directory.
 
+## Formal dataset download
+
+The formal 33,385-sample dataset is published separately on ModelScope at revision
+`8275415535d4ed2d4f7dfd8ad3ef964a8a3eeae4`. Its three file hashes match the frozen
+experiment splits. Install the data-download dependency and request a download:
+
+```bash
+pip install -r environment/requirements-data.txt
+python scripts/download_data.py
+```
+
+The service returned a login requirement for anonymous file requests during the
+2026-10-27 check. Authenticate locally through the official ModelScope SDK/CLI
+when required; browser login alone is not necessarily SDK login. Never put access
+tokens into code or commits. The helper uses the SDK's local authentication state
+and refuses to report success unless all three file hashes match.
+
+By default, the snapshot layout is preserved under `data/formal/`: the train,
+validation and test files are `data/formal/data/train.jsonl`,
+`data/formal/data/validation.jsonl` and `data/formal/data/test.jsonl`.
+The downloader prints the verified paths. `--destination` can select another cache
+root; `--dry-run` only shows settings without network or credentials. Metadata
+and download-endpoint access were checked, but this integration did not perform
+an authenticated full download, retraining, inference or formal statistical rerun.
+
 ## Training and evaluation
 
 Training is a separate opt-in entry point. It downloads the frozen baseline if needed, validates its hashes, then invokes the historical trainer with explicit paths:
 
 ```bash
-python scripts/train.py --train-file /path/to/train.jsonl --eval-file /path/to/val.jsonl --output-dir runs/new_training --final-dir runs/new_merged
+python scripts/train.py --train-file data/formal/data/train.jsonl --eval-file data/formal/data/validation.jsonl --output-dir runs/new_training --final-dir runs/new_merged
 ```
 
 Only Level-3 training records are optimized; only Level-3 validation records select the checkpoint. Loss is computed on assistant-answer tokens only. This repository preparation did not run training.
@@ -73,4 +99,4 @@ Review-macro note-set F1 increased from 0.1513 to 0.2948 overall and from 0.2111
 
 ## Data and license
 
-See `data/README.md` for unavailable third-party review data and the distinction between synthetic examples and formal samples. The code is released under Apache-2.0. Upstream model licensing is separate and retained in the model repository. No rights to third-party review text or benchmark datasets are granted by the code license.
+See `data/README.md` for the public formal dataset, source-rights notice, and distinction between synthetic examples and experimental samples. The raw 119,093-record source spreadsheet is not included. The code is released under Apache-2.0. Model and data rights are separate; the code license does not grant rights to third-party review text or benchmark datasets.

@@ -2,9 +2,11 @@
 
 ## Data and checkpoint
 
-The public code release excludes third-party review text. Complete retraining and
-domain reevaluation require access to the formal private split files; the toy
-example is not a replacement. The final merged model is from step 700, not the
+The formal split files are now published in the linked ModelScope dataset rather
+than embedded in the code repository. Use scripts/download_data.py and the fixed
+revision in configs/dataset_sources.json; local SDK login may be required for
+file downloads. Downloaded files preserve the original experiment hashes and
+splits. The toy example is not a replacement. The final merged model is from step 700, not the
 step-1100 early-stopping endpoint. Base refers to the original post-trained
 Qwen3.5-4B before domain adaptation, not a separately pretrained `-Base` model.
 
@@ -63,7 +65,7 @@ python src/eval_user_request_note_design.py --phase generate --model base --proj
 
 Generate the other model with the same command and `--model finetuned` plus its
 explicit model path. Native thinking stays disabled. Analysis also requires the
-private Level-3 training labels to reconstruct the 501-term vocabulary:
+Level-3 labels from the published training split to reconstruct the 501-term vocabulary:
 
 ```bash
 python src/eval_user_request_note_design.py --phase analyze --project-root . --requests-file data/user_request_note_design_pilot_v2_thinking.jsonl --training-file /path/to/train.jsonl --reasoning-mode visible_plan --max-new-tokens 512 --run-dir runs/application_new
@@ -74,7 +76,8 @@ preference score, or user win rate is produced or required.
 
 ## Existing-result audits
 
-The same-test common-note audit uses original private test and generation files:
+The same-test common-note audit uses the published test split and the original
+frozen generation files. Those generation archives are not included in this code repository:
 
 ```bash
 python scripts/analyze_test_note_overprediction_20261014.py --test-file /path/to/test.jsonl --formal-directory /path/to/repair24 --output-dir runs/common_note_audit_new
@@ -82,4 +85,4 @@ python scripts/analyze_test_note_overprediction_20261014.py --test-file /path/to
 
 It performs only descriptive post-processing and retains frozen input-hash
 verification. Use new output directories and preserve originals. Aggregate public
-results are provided as evidence, not as a replacement for raw-data access.
+results are provided as evidence, not as a replacement for the required input artifacts.

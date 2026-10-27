@@ -410,8 +410,8 @@ def main() -> None:
     """
     # 步骤1: Check frozen generations against the original archive digests.
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--test-file", type=Path, required=True, help="Private formal test JSONL; never redistributed with this release.")
-    parser.add_argument("--formal-directory", type=Path, required=True, help="Private frozen repair24 run directory.")
+    parser.add_argument("--test-file", type=Path, required=True, help="Formal test JSONL; obtainable through scripts/download_data.py.")
+    parser.add_argument("--formal-directory", type=Path, required=True, help="Original frozen repair24 generation run directory.")
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIRECTORY, help="New directory; existing directories are never overwritten.")
     arguments = parser.parse_args()
     output_directory = arguments.output_dir.resolve()

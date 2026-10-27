@@ -49,7 +49,8 @@ first spelling; it does not merge synonyms or remove cross-tier occurrences.
 Invalid or still-truncated retries remain represented and are not silently dropped.
 Unselected records remain unchanged. Input text, references and raw new responses
 are retained separately, and final replacement uses source_index without reordering.
-These outputs may contain private reviews and must not be publicly uploaded.
+These outputs contain review text and may contain local paths. Review the dataset's
+source-rights notice and remove credentials/private paths before redistributing outputs.
 
 The new run contains only the selected model's generation side. For a later metric
 run, place an unchanged copy of the peer model's archived generation file beside
@@ -58,7 +59,7 @@ recompute or substitute published paper values without author review.
 
 ## Fixed-prior selection and permutations
 
-`scripts/reconstruct_prior_permutation.py` uses existing private splits and final
+`scripts/reconstruct_prior_permutation.py` uses the published formal splits and final
 prediction files; it contains no model or API call. Every input must be provided
 explicitly. A future run, if separately requested, can use:
 

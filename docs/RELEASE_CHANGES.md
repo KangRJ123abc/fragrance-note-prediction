@@ -46,3 +46,20 @@ corrects the published checksum mismatch caused by Git normalizing a mixed-line-
 ending script. SHA256SUMS.json is refreshed for repository files, including
 .gitattributes. Only synthetic unit tests and metadata checks were performed;
 full model downloads, GPU inference and formal experiment reruns were not done.
+
+## Published dataset integration on 2026-10-27
+
+The three formal split files are now separately published at
+https://www.modelscope.cn/datasets/KangRJ123abc/Fragrance-Review-Note-Pyramids,
+revision 8275415535d4ed2d4f7dfd8ad3ef964a8a3eeae4. All eight supplied data/card
+manifest entries match the remote file metadata. The three data file hashes match
+the frozen experiment inputs. Filenames are shortened, but their bytes and split
+assignments have not changed. Earlier statements in this change log about excluded
+private review data describe the initial code-only package, not current access.
+
+The code adds an official-SDK data downloader, immutable source configuration,
+cache exclusion and updated access documentation. Anonymous data file requests
+returned a login requirement; this is documented rather than bypassed. Credentials
+are read only by the SDK's normal local login mechanism and are not included here.
+No authenticated complete data download, training, inference or formal statistical
+rerun was performed for this integration. Tests use only invented small files.

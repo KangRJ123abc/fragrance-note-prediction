@@ -1,6 +1,6 @@
 """Share safe I/O and original scoring primitives for release reconstructions.
 
-These helpers do not load a model. They validate private chat splits, preserve
+These helpers do not load a model. They validate formal chat splits, preserve
 zero-based physical source-line indexes, and reuse the archived domain parser.
 Dependencies are the standard library and NumPy through the original scorer.
 This is release-time code, not a recovered historical executor.
@@ -128,7 +128,7 @@ def load_labels(path: Path, level: int | None = None) -> list[dict[str, Any]]:
     """Validate a chat split and extract references without altering prompts.
 
     Args:
-        path (Path): Private formal chat JSONL selected by the caller.
+        path (Path): Formal chat JSONL downloaded or otherwise selected by the caller.
         level (int | None): Optional metadata level filter; None retains all.
     Returns:
         list[dict[str, Any]]: Index, level, audit row ID, and normalized notes.

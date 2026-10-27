@@ -190,7 +190,7 @@ def evaluate_groups(labels: list[dict[str, Any]], predictions: list[set[str]],
 # ========== Explicit release reconstruction entry ==========
 
 def build_parser() -> argparse.ArgumentParser:
-    """Expose private inputs, new output path and reconstructed numerical choices.
+    """Expose formal inputs, new output path and reconstructed numerical choices.
 
     Args:
         None: The main function obtains actual values from command-line callers.
@@ -210,7 +210,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def run_reconstruction(arguments: argparse.Namespace) -> None:
-    """Read private frozen inputs and persist newly reconstructed statistics.
+    """Read frozen inputs and persist newly reconstructed statistics.
 
     Args:
         arguments (argparse.Namespace): Explicit input and choice values from CLI.
@@ -251,7 +251,7 @@ def save_configuration(arguments: argparse.Namespace, training_count: int, valid
     Raises:
         RuntimeError: Hashing or writing an output fails.
     """
-    # 步骤1: Hash original inputs without publishing their private contents.
+    # 步骤1: Record input hashes without copying their contents into result metadata.
     sources = {name: {"file_name": getattr(arguments, name).name,
                       "sha256": calculate_sha256(getattr(arguments, name))}
                for name in ("train_file", "val_file", "test_file", "predictions_file")}

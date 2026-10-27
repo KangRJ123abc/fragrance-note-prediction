@@ -1,0 +1,28 @@
+{
+  "repo_id": "KangRJ123abc/Fragrance-Review-Note-Pyramids",
+  "repository_url": "https://www.modelscope.cn/datasets/KangRJ123abc/Fragrance-Review-Note-Pyramids",
+  "revision": "8275415535d4ed2d4f7dfd8ad3ef964a8a3eeae4",
+  "cache_directory": "data/formal",
+  "metadata_checked_on": "2026-10-27",
+  "access_note": "The published repository metadata is accessible, but anonymous file requests returned a login requirement on 2026-10-27. Use the official ModelScope SDK with local account login when required. No credential is included in this repository.",
+  "files": {
+    "train": {
+      "path": "data/train.jsonl",
+      "original_name": "qwen_finetune_notes_review_v2_strict_chat_train.jsonl",
+      "samples": 26646,
+      "sha256": "9a5b94798cb102cd647b8d9ec3613179403bc6472f87bcbf86d012e61d5f1c93"
+    },
+    "validation": {
+      "path": "data/validation.jsonl",
+      "original_name": "qwen_finetune_notes_review_v2_strict_chat_val.jsonl",
+      "samples": 3450,
+      "sha256": "8b2ad073579fa1c612f445a4a6e44dfc710721116d5c37478144122ed4fcf4f0"
+    },
+    "test": {
+      "path": "data/test.jsonl",
+      "original_name": "qwen_finetune_notes_review_v2_strict_chat_test.jsonl",
+      "samples": 3289,
+      "sha256": "0c9e4c7b1ea58b79eb626c59544c7b8d560e1c411ae0bfdad72fad60cbf03b50"
+    }
+  }
+}

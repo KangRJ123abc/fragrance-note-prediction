@@ -20,7 +20,7 @@ from model_files import REPOSITORY_ROOT, verify_files
 # ========== Explicit training launch ==========
 
 def validate_paths(arguments: argparse.Namespace) -> None:
-    """Check private input splits and prevent overwriting training outputs.
+    """Check formal input splits and prevent overwriting training outputs.
 
     Args:
         arguments (argparse.Namespace): Parsed CLI paths supplied by the user.

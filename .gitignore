@@ -18,6 +18,7 @@ __pycache__/
 wandb/
 unsloth_compiled_cache*/
 data/private/
+data/formal/
 data/*strict_chat*.jsonl
 data/*screened_reviews*.jsonl
 data/*.xlsx
