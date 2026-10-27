@@ -1,0 +1,16 @@
+{
+  "base": {
+    "repo_id": "unsloth/Qwen3___5-4B",
+    "revision": "5787df4be25ec60f8b26b39d3147157c0f60b2e5",
+    "cache_directory": "models/base",
+    "hash_manifest": "configs/base_model_files.json",
+    "source": "Original ModelScope download metadata; not the similarly named pretrained Qwen3.5-4B-Base variant. Remote revision availability has not been tested during release preparation."
+  },
+  "finetuned": {
+    "repo_id": null,
+    "revision": null,
+    "cache_directory": "models/finetuned-step700",
+    "hash_manifest": "configs/finetuned_model_files.json",
+    "source": "Author must fill the actual ModelScope repository and fixed release revision after upload. Local model loading works before publication."
+  }
+}

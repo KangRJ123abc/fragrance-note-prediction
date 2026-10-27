@@ -1,0 +1,779 @@
+{
+  "num_samples": 3289,
+  "models": {
+    "Qwen3.5-4B-Base": {
+      "overall": {
+        "samples": 3289,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 1.0,
+        "exact_keys_rate": 1.0,
+        "valid_schema_rate": 1.0,
+        "precision": 0.2813261369058769,
+        "recall": 0.11649318254081165,
+        "f1": 0.15126145217433934,
+        "jaccard": 0.09339396218367119,
+        "tier_macro_f1": 0.0882019920329437,
+        "exact_flat_set_rate": 0.002128306476132563,
+        "exact_tiered_set_rate": 0.0003040437823046519,
+        "average_note_count": 4.294618425053208,
+        "average_duplicate_notes": 0.2772879294618425,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 57.34904226208574,
+        "unique_output_rate": 0.9291577987230161,
+        "distinct_terms": 1948,
+        "top_terms": [
+          [
+            "vanilla",
+            705
+          ],
+          [
+            "citrus",
+            682
+          ],
+          [
+            "floral",
+            510
+          ],
+          [
+            "fresh",
+            330
+          ],
+          [
+            "musk",
+            310
+          ],
+          [
+            "amber",
+            293
+          ],
+          [
+            "woody",
+            279
+          ],
+          [
+            "sweet",
+            255
+          ],
+          [
+            "clean",
+            225
+          ],
+          [
+            "lemon",
+            214
+          ],
+          [
+            "leather",
+            213
+          ],
+          [
+            "rose",
+            204
+          ],
+          [
+            "tobacco",
+            159
+          ],
+          [
+            "powdery",
+            157
+          ],
+          [
+            "lavender",
+            152
+          ],
+          [
+            "iris",
+            150
+          ],
+          [
+            "patchouli",
+            149
+          ],
+          [
+            "coconut",
+            147
+          ],
+          [
+            "fruity",
+            135
+          ],
+          [
+            "tuberose",
+            129
+          ]
+        ],
+        "BLEU-1": 0.8741527631398761,
+        "BLEU-2": 0.6738661504426927,
+        "BLEU-3": 0.5163427365834427,
+        "BLEU-4": 0.4008668415894776,
+        "ROUGE-1-F": 0.6920795762809085,
+        "ROUGE-2-F": 0.5280389904737335,
+        "ROUGE-L-F": 0.6635003223861041,
+        "top_notes_f1": 0.1354416722765765,
+        "middle_notes_f1": 0.04736201098317243,
+        "base_notes_f1": 0.08180229283908214
+      },
+      "level_2": {
+        "samples": 1832,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 1.0,
+        "exact_keys_rate": 1.0,
+        "valid_schema_rate": 1.0,
+        "precision": 0.2426786444390156,
+        "recall": 0.0722201077446592,
+        "f1": 0.10370390810035288,
+        "jaccard": 0.06129894521496088,
+        "tier_macro_f1": 0.05311179298624713,
+        "exact_flat_set_rate": 0.0005458515283842794,
+        "exact_tiered_set_rate": 0.0,
+        "average_note_count": 3.3351528384279474,
+        "average_duplicate_notes": 0.18777292576419213,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 50.2014192139738,
+        "unique_output_rate": 0.888646288209607,
+        "distinct_terms": 1129,
+        "top_terms": [
+          [
+            "citrus",
+            379
+          ],
+          [
+            "vanilla",
+            289
+          ],
+          [
+            "floral",
+            251
+          ],
+          [
+            "fresh",
+            226
+          ],
+          [
+            "sweet",
+            179
+          ],
+          [
+            "clean",
+            155
+          ],
+          [
+            "lemon",
+            114
+          ],
+          [
+            "woody",
+            109
+          ],
+          [
+            "amber",
+            105
+          ],
+          [
+            "musk",
+            103
+          ],
+          [
+            "leather",
+            81
+          ],
+          [
+            "tobacco",
+            78
+          ],
+          [
+            "powdery",
+            77
+          ],
+          [
+            "fruity",
+            73
+          ],
+          [
+            "coconut",
+            70
+          ],
+          [
+            "rose",
+            66
+          ],
+          [
+            "musky",
+            58
+          ],
+          [
+            "soap",
+            57
+          ],
+          [
+            "warm",
+            54
+          ],
+          [
+            "lavender",
+            53
+          ]
+        ],
+        "BLEU-1": 0.8888706992354177,
+        "BLEU-2": 0.693445330747683,
+        "BLEU-3": 0.5344866528570766,
+        "BLEU-4": 0.4146842557004864,
+        "ROUGE-1-F": 0.6779850632026363,
+        "ROUGE-2-F": 0.5227371975783954,
+        "ROUGE-L-F": 0.6585200694721173,
+        "top_notes_f1": 0.09722363395944182,
+        "middle_notes_f1": 0.019884591391141612,
+        "base_notes_f1": 0.04222715360815797
+      },
+      "level_3": {
+        "samples": 1457,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 1.0,
+        "exact_keys_rate": 1.0,
+        "valid_schema_rate": 1.0,
+        "precision": 0.32992065042632285,
+        "recall": 0.17216118050000953,
+        "f1": 0.21105927011774578,
+        "jaccard": 0.13374953602490472,
+        "tier_macro_f1": 0.13232364244718398,
+        "exact_flat_set_rate": 0.004118050789293068,
+        "exact_tiered_set_rate": 0.0006863417982155113,
+        "average_note_count": 5.501029512697324,
+        "average_duplicate_notes": 0.38984214138641043,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 66.3363074811256,
+        "unique_output_rate": 0.9945092656142759,
+        "distinct_terms": 1331,
+        "top_terms": [
+          [
+            "vanilla",
+            416
+          ],
+          [
+            "citrus",
+            303
+          ],
+          [
+            "floral",
+            259
+          ],
+          [
+            "musk",
+            207
+          ],
+          [
+            "amber",
+            188
+          ],
+          [
+            "woody",
+            170
+          ],
+          [
+            "rose",
+            138
+          ],
+          [
+            "leather",
+            132
+          ],
+          [
+            "patchouli",
+            121
+          ],
+          [
+            "fresh",
+            104
+          ],
+          [
+            "lemon",
+            100
+          ],
+          [
+            "iris",
+            99
+          ],
+          [
+            "lavender",
+            99
+          ],
+          [
+            "tuberose",
+            88
+          ],
+          [
+            "sandalwood",
+            82
+          ],
+          [
+            "bergamot",
+            81
+          ],
+          [
+            "incense",
+            81
+          ],
+          [
+            "tobacco",
+            81
+          ],
+          [
+            "powdery",
+            80
+          ],
+          [
+            "coconut",
+            77
+          ]
+        ],
+        "BLEU-1": 0.8556467515221463,
+        "BLEU-2": 0.6492477164559101,
+        "BLEU-3": 0.4935289722640893,
+        "BLEU-4": 0.3834931266606044,
+        "ROUGE-1-F": 0.7098017094033483,
+        "ROUGE-2-F": 0.5347053491451537,
+        "ROUGE-L-F": 0.6697623837027985,
+        "top_notes_f1": 0.1834961995222805,
+        "middle_notes_f1": 0.08191151866512196,
+        "base_notes_f1": 0.13156320915414943
+      }
+    },
+    "Qwen3.5-4B-Finetuned-Unsloth": {
+      "overall": {
+        "samples": 3289,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 0.9996959562176954,
+        "exact_keys_rate": 0.9996959562176954,
+        "valid_schema_rate": 0.9996959562176954,
+        "precision": 0.3297778717773169,
+        "recall": 0.29942430785160834,
+        "f1": 0.29477759555211974,
+        "jaccard": 0.18317519610959543,
+        "tier_macro_f1": 0.22250944801907513,
+        "exact_flat_set_rate": 0.0003040437823046519,
+        "exact_tiered_set_rate": 0.0,
+        "average_note_count": 10.018850714502888,
+        "average_duplicate_notes": 0.14259653390088173,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 43.57008209182122,
+        "unique_output_rate": 0.8276071754332623,
+        "distinct_terms": 338,
+        "top_terms": [
+          [
+            "musk",
+            3053
+          ],
+          [
+            "bergamot",
+            2830
+          ],
+          [
+            "amber",
+            2375
+          ],
+          [
+            "lemon",
+            1931
+          ],
+          [
+            "jasmine",
+            1807
+          ],
+          [
+            "patchouli",
+            1748
+          ],
+          [
+            "cedar",
+            1560
+          ],
+          [
+            "sandalwood",
+            1523
+          ],
+          [
+            "mandarin orange",
+            1223
+          ],
+          [
+            "vanilla",
+            1192
+          ],
+          [
+            "rose",
+            1106
+          ],
+          [
+            "orange blossom",
+            1075
+          ],
+          [
+            "tonka bean",
+            594
+          ],
+          [
+            "cinnamon",
+            592
+          ],
+          [
+            "pink pepper",
+            529
+          ],
+          [
+            "nutmeg",
+            502
+          ],
+          [
+            "vetiver",
+            435
+          ],
+          [
+            "cardamom",
+            397
+          ],
+          [
+            "lavender",
+            359
+          ],
+          [
+            "neroli",
+            314
+          ]
+        ],
+        "BLEU-1": 0.7794290990283423,
+        "BLEU-2": 0.568247038824106,
+        "BLEU-3": 0.4052166012672436,
+        "BLEU-4": 0.3055078414843183,
+        "ROUGE-1-F": 0.7425643428284711,
+        "ROUGE-2-F": 0.540401407440249,
+        "ROUGE-L-F": 0.6856954341745525,
+        "top_notes_f1": 0.2764191598714829,
+        "middle_notes_f1": 0.14425539257722378,
+        "base_notes_f1": 0.24685379160851867
+      },
+      "level_2": {
+        "samples": 1832,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 0.9994541484716157,
+        "exact_keys_rate": 0.9994541484716157,
+        "valid_schema_rate": 0.9994541484716157,
+        "precision": 0.30268368965536696,
+        "recall": 0.26821163942485376,
+        "f1": 0.26551115441158096,
+        "jaccard": 0.16102833811523182,
+        "tier_macro_f1": 0.20539171327517114,
+        "exact_flat_set_rate": 0.0,
+        "exact_tiered_set_rate": 0.0,
+        "average_note_count": 10.055676855895197,
+        "average_duplicate_notes": 0.16430131004366813,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 43.672489082969435,
+        "unique_output_rate": 0.7783842794759825,
+        "distinct_terms": 256,
+        "top_terms": [
+          [
+            "musk",
+            1769
+          ],
+          [
+            "bergamot",
+            1614
+          ],
+          [
+            "amber",
+            1372
+          ],
+          [
+            "lemon",
+            1140
+          ],
+          [
+            "jasmine",
+            1014
+          ],
+          [
+            "patchouli",
+            911
+          ],
+          [
+            "cedar",
+            873
+          ],
+          [
+            "sandalwood",
+            860
+          ],
+          [
+            "mandarin orange",
+            749
+          ],
+          [
+            "orange blossom",
+            670
+          ],
+          [
+            "vanilla",
+            612
+          ],
+          [
+            "rose",
+            610
+          ],
+          [
+            "cinnamon",
+            334
+          ],
+          [
+            "tonka bean",
+            327
+          ],
+          [
+            "nutmeg",
+            304
+          ],
+          [
+            "pink pepper",
+            302
+          ],
+          [
+            "cardamom",
+            243
+          ],
+          [
+            "vetiver",
+            230
+          ],
+          [
+            "neroli",
+            200
+          ],
+          [
+            "lavender",
+            195
+          ]
+        ],
+        "BLEU-1": 0.7675726686829512,
+        "BLEU-2": 0.5547447490402273,
+        "BLEU-3": 0.39535557218505557,
+        "BLEU-4": 0.2974797172756053,
+        "ROUGE-1-F": 0.7317229990177756,
+        "ROUGE-2-F": 0.527745816246151,
+        "ROUGE-L-F": 0.6802719348278153,
+        "top_notes_f1": 0.25247589135256104,
+        "middle_notes_f1": 0.12480181158075934,
+        "base_notes_f1": 0.23889743689219298
+      },
+      "level_3": {
+        "samples": 1457,
+        "strict_json_rate": 1.0,
+        "recoverable_json_rate": 1.0,
+        "required_keys_rate": 1.0,
+        "exact_keys_rate": 1.0,
+        "valid_schema_rate": 1.0,
+        "precision": 0.3638455050288009,
+        "recall": 0.3386704358940341,
+        "f1": 0.3315765798825707,
+        "jaccard": 0.21102217198171214,
+        "tier_macro_f1": 0.2440329140800443,
+        "exact_flat_set_rate": 0.0006863417982155113,
+        "exact_tiered_set_rate": 0.0,
+        "average_note_count": 9.97254632807138,
+        "average_duplicate_notes": 0.1153054221002059,
+        "hit_max_new_tokens_rate": 0.0,
+        "average_output_tokens": 43.441317776252575,
+        "unique_output_rate": 0.9608785175017158,
+        "distinct_terms": 292,
+        "top_terms": [
+          [
+            "musk",
+            1284
+          ],
+          [
+            "bergamot",
+            1216
+          ],
+          [
+            "amber",
+            1003
+          ],
+          [
+            "patchouli",
+            837
+          ],
+          [
+            "jasmine",
+            793
+          ],
+          [
+            "lemon",
+            791
+          ],
+          [
+            "cedar",
+            687
+          ],
+          [
+            "sandalwood",
+            663
+          ],
+          [
+            "vanilla",
+            580
+          ],
+          [
+            "rose",
+            496
+          ],
+          [
+            "mandarin orange",
+            474
+          ],
+          [
+            "orange blossom",
+            405
+          ],
+          [
+            "tonka bean",
+            267
+          ],
+          [
+            "cinnamon",
+            258
+          ],
+          [
+            "pink pepper",
+            227
+          ],
+          [
+            "vetiver",
+            205
+          ],
+          [
+            "nutmeg",
+            198
+          ],
+          [
+            "lavender",
+            164
+          ],
+          [
+            "cardamom",
+            154
+          ],
+          [
+            "grapefruit",
+            131
+          ]
+        ],
+        "BLEU-1": 0.7943371157701109,
+        "BLEU-2": 0.5852245233018449,
+        "BLEU-3": 0.4176156440116285,
+        "BLEU-4": 0.31560222964517093,
+        "ROUGE-1-F": 0.7561960119164558,
+        "ROUGE-2-F": 0.5563142715909611,
+        "ROUGE-L-F": 0.6925148238816371,
+        "top_notes_f1": 0.3065249031293174,
+        "middle_notes_f1": 0.16871590073475495,
+        "base_notes_f1": 0.2568579383760606
+      }
+    }
+  },
+  "finetuned_minus_base": {
+    "level_2": {
+      "strict_json_rate": 0.0,
+      "recoverable_json_rate": 0.0,
+      "required_keys_rate": -0.0005458515283842669,
+      "exact_keys_rate": -0.0005458515283842669,
+      "valid_schema_rate": -0.0005458515283842669,
+      "precision": 0.06000504521635136,
+      "recall": 0.19599153168019456,
+      "f1": 0.1618072463112281,
+      "jaccard": 0.09972939290027094,
+      "tier_macro_f1": 0.152279920288924,
+      "exact_flat_set_rate": -0.0005458515283842794,
+      "exact_tiered_set_rate": 0.0,
+      "average_note_count": 6.720524017467249,
+      "average_duplicate_notes": -0.023471615720524003,
+      "hit_max_new_tokens_rate": 0.0,
+      "average_output_tokens": -6.5289301310043655,
+      "unique_output_rate": -0.11026200873362446,
+      "distinct_terms": -873.0,
+      "BLEU-1": -0.12129803055246657,
+      "BLEU-2": -0.1387005817074557,
+      "BLEU-3": -0.13913108067202107,
+      "BLEU-4": -0.1172045384248811,
+      "ROUGE-1-F": 0.053737935815139304,
+      "ROUGE-2-F": 0.005008618667755593,
+      "ROUGE-L-F": 0.021751865355698063,
+      "top_notes_f1": 0.1552522573931192,
+      "middle_notes_f1": 0.10491722018961773,
+      "base_notes_f1": 0.19667028328403502
+    },
+    "level_3": {
+      "strict_json_rate": 0.0,
+      "recoverable_json_rate": 0.0,
+      "required_keys_rate": 0.0,
+      "exact_keys_rate": 0.0,
+      "valid_schema_rate": 0.0,
+      "precision": 0.03392485460247807,
+      "recall": 0.16650925539402459,
+      "f1": 0.12051730976482494,
+      "jaccard": 0.07727263595680742,
+      "tier_macro_f1": 0.11170927163286032,
+      "exact_flat_set_rate": -0.003431708991077557,
+      "exact_tiered_set_rate": -0.0006863417982155113,
+      "average_note_count": 4.471516815374056,
+      "average_duplicate_notes": -0.27453671928620454,
+      "hit_max_new_tokens_rate": 0.0,
+      "average_output_tokens": -22.894989704873026,
+      "unique_output_rate": -0.03363074811256006,
+      "distinct_terms": -1039.0,
+      "BLEU-1": -0.06130963575203541,
+      "BLEU-2": -0.06402319315406513,
+      "BLEU-3": -0.07591332825246083,
+      "BLEU-4": -0.0678908970154335,
+      "ROUGE-1-F": 0.0463943025131075,
+      "ROUGE-2-F": 0.021608922445807477,
+      "ROUGE-L-F": 0.022752440178838595,
+      "top_notes_f1": 0.12302870360703691,
+      "middle_notes_f1": 0.086804382069633,
+      "base_notes_f1": 0.12529472922191115
+    },
+    "overall": {
+      "strict_json_rate": 0.0,
+      "recoverable_json_rate": 0.0,
+      "required_keys_rate": -0.0003040437823046416,
+      "exact_keys_rate": -0.0003040437823046416,
+      "valid_schema_rate": -0.0003040437823046416,
+      "precision": 0.04845173487144,
+      "recall": 0.1829311253107967,
+      "f1": 0.1435161433777804,
+      "jaccard": 0.08978123392592424,
+      "tier_macro_f1": 0.13430745598613142,
+      "exact_flat_set_rate": -0.001824262693827911,
+      "exact_tiered_set_rate": -0.0003040437823046519,
+      "average_note_count": 5.72423228944968,
+      "average_duplicate_notes": -0.13469139556096077,
+      "hit_max_new_tokens_rate": 0.0,
+      "average_output_tokens": -13.778960170264519,
+      "unique_output_rate": -0.10155062328975373,
+      "distinct_terms": -1610.0,
+      "BLEU-1": -0.09472366411153377,
+      "BLEU-2": -0.10561911161858673,
+      "BLEU-3": -0.11112613531619903,
+      "BLEU-4": -0.0953590001051593,
+      "ROUGE-1-F": 0.05048476654756251,
+      "ROUGE-2-F": 0.012362416966515521,
+      "ROUGE-L-F": 0.022195111788448352,
+      "top_notes_f1": 0.14097748759490641,
+      "middle_notes_f1": 0.09689338159405135,
+      "base_notes_f1": 0.16505149876943653
+    }
+  }
+}

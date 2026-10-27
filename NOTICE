@@ -1,0 +1,9 @@
+Structured fragrance note prediction research code
+Copyright 2026 the contributing authors.
+
+This code package is released under Apache License 2.0.
+This license does not grant rights to third-party reviews,
+benchmark datasets, or dependencies. Each dependency retains its own license.
+
+The companion fine-tuned weights derive from Qwen3.5-4B distributed through
+Unsloth. Upstream model source and notices are recorded in the model repository.

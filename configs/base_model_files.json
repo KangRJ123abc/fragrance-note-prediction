@@ -1,0 +1,15 @@
+{
+  "chat_template.jinja": "7f0e529032c25183bcd66c7f238da2d377f43be754a94e2725a58c4e16d2ed67",
+  "config.json": "964a08188ba8b2fabfb58a99ea7ff2c70fd9a84b93f5a8fb43ff6f6a2a2a77b0",
+  "configuration.json": "7f5e4dab8f262b1731914cb110764c86dbfc0459a136de7cc3ae4ae375edc828",
+  "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+  "model.safetensors-00001-of-00002.safetensors": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+  "model.safetensors-00002-of-00002.safetensors": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+  "model.safetensors.index.json": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "preprocessor_config.json": "6a970fd06f30e6943b3e2c14d5d3b42d49b06cf99b99103d56689bef462d90f8",
+  "processor_config.json": "14932921ca485d458a04dafd8069fbb0a4505622a48208d19ed247115801385b",
+  "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+  "tokenizer_config.json": "8808c116c7fc4b642db657ba481ffeb3b09a921303850878f1cdd6c040bba12b",
+  "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+  "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+}

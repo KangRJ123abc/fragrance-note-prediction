@@ -1,0 +1,5 @@
+{
+  "qwen_finetune_notes_review_v2_strict_chat_train.jsonl": "9a5b94798cb102cd647b8d9ec3613179403bc6472f87bcbf86d012e61d5f1c93",
+  "qwen_finetune_notes_review_v2_strict_chat_val.jsonl": "8b2ad073579fa1c612f445a4a6e44dfc710721116d5c37478144122ed4fcf4f0",
+  "qwen_finetune_notes_review_v2_strict_chat_test.jsonl": "0c9e4c7b1ea58b79eb626c59544c7b8d560e1c411ae0bfdad72fad60cbf03b50"
+}

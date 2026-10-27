@@ -1,0 +1,49 @@
+{
+  "training_scope": "Level 3 rows actually used for fine-tuning",
+  "rows": 11487,
+  "total_label_occurrences": 111697,
+  "distinct_reference_terms": 501,
+  "exact_terms_combined_occurrences": 11388,
+  "exact_terms_combined_share": 0.10195439447791795,
+  "terms": {
+    "bergamot": {
+      "exact_occurrences": 4328,
+      "exact_share": 0.03874768346508859,
+      "rows_present": 4328,
+      "row_prevalence": 0.3767737442326108,
+      "by_tier": {
+        "top_notes": 4270,
+        "middle_notes": 58,
+        "base_notes": 0
+      },
+      "substring_family_occurrences": 4622,
+      "substring_family_share": 0.04137980429196845
+    },
+    "musk": {
+      "exact_occurrences": 4067,
+      "exact_share": 0.0364110047718381,
+      "rows_present": 4038,
+      "row_prevalence": 0.35152781405066597,
+      "by_tier": {
+        "top_notes": 115,
+        "middle_notes": 168,
+        "base_notes": 3784
+      },
+      "substring_family_occurrences": 5552,
+      "substring_family_share": 0.04970590078515985
+    },
+    "amber": {
+      "exact_occurrences": 2993,
+      "exact_share": 0.026795706240991254,
+      "rows_present": 2993,
+      "row_prevalence": 0.26055541046400277,
+      "by_tier": {
+        "top_notes": 29,
+        "middle_notes": 267,
+        "base_notes": 2697
+      },
+      "substring_family_occurrences": 4416,
+      "substring_family_share": 0.039535529154766914
+    }
+  }
+}

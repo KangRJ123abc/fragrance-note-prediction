@@ -1,0 +1,37 @@
+{
+  "training": {
+    "seed": 3407, "max_sequence_length": 2048, "lora_rank": 16,
+    "lora_alpha": 32, "lora_dropout": 0.0, "bias": "none",
+    "learning_rate": 0.000015, "weight_decay": 0.01, "warmup_steps": 50,
+    "train_batch_size": 1, "gradient_accumulation_steps": 4,
+    "evaluation_batch_size": 4, "max_steps": 2000, "eval_steps": 100,
+    "early_stopping_patience": 4, "early_stopping_threshold": 0.002,
+    "best_checkpoint_step": 700, "stopped_step": 1100,
+    "trainable_parameters": 32464896, "precision": "bfloat16",
+    "lora_target_modules": ["in_proj_qkv", "in_proj_z", "in_proj_a", "in_proj_b", "out_proj", "q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  },
+  "domain_generation": {
+    "seed": 3407, "temperature": 0.0, "top_p": 1.0,
+    "enable_thinking": false, "max_model_length": 4096, "max_new_tokens": 256
+  },
+  "domain_length_fallback": {
+    "selection": "Initial finish_reason=length only; 24 frozen Finetuned cases",
+    "same_model_and_input": true, "max_new_tokens": 512,
+    "temperature": 0.0, "top_p": 1.0,
+    "repetition_penalty": 1.05, "frequency_penalty": 0.10,
+    "strict_three_key_schema": true, "max_items_per_tier": 12,
+    "implementation_status": "Historical independent fallback executor was not found. A release-time reconstruction is supplied in scripts/reconstruct_length_fallback.py; not executed on formal data or a model."
+  },
+  "application_transfer_v3": {
+    "requests": 24, "chinese": 12, "english": 12,
+    "seed": 3407, "reasoning_mode": "visible_plan", "enable_thinking": false,
+    "temperature": 0.0, "top_p": 1.0, "max_new_tokens": 512,
+    "max_model_length": 4096, "human_preference_study": false
+  },
+  "general_benchmarks": {
+    "seed": 42, "evalscope": "1.4.2", "max_model_length": 8192,
+    "max_tokens": 1024, "temperature": 0.0, "top_p": 1.0,
+    "enable_thinking": false, "paired_bootstrap_repetitions": 20000,
+    "mcnemar": "two-sided exact", "multiple_testing": "Holm across six benchmarks"
+  }
+}

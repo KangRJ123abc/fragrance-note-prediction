@@ -1,0 +1,733 @@
+{
+  "groups": {
+    "overall": {
+      "n_reviews": 3289,
+      "n_perfumes": 52,
+      "models": {
+        "Base": {
+          "mean_list_count": 4.294618425053208,
+          "mean_unique_count": 4.017330495591366,
+          "mean_reference_count": 10.69534813013074,
+          "mean_false_positive_count": 2.972027972027972,
+          "mean_false_negative_count": 9.650045606567346,
+          "scores": {
+            "precision": 0.2813261369058769,
+            "recall": 0.11649318254081166,
+            "f1": 0.15126145217433934
+          },
+          "occurrence_totals": {
+            "tp": 3438,
+            "fp": 9775,
+            "fn": 31739
+          },
+          "focus_share_of_predicted_occurrences": 0.04654506924998108,
+          "labels": {
+            "bergamot": {
+              "tp": 73,
+              "fp": 23,
+              "fn": 1290,
+              "tn": 1903,
+              "reference_count": 1363,
+              "predicted_count": 96,
+              "reference_coverage": 0.4144116752812405,
+              "prediction_coverage": 0.02918820310124658,
+              "precision": 0.7604166666666666,
+              "recall": 0.05355832721936904,
+              "coverage_difference_pp": -38.52234721799939,
+              "false_positive_rate": 0.011941848390446522,
+              "reference_occurrence_share": 0.038746908491343775,
+              "predicted_occurrence_share": 0.0072655717853629
+            },
+            "musk": {
+              "tp": 170,
+              "fp": 108,
+              "fn": 1113,
+              "tn": 1898,
+              "reference_count": 1283,
+              "predicted_count": 278,
+              "reference_coverage": 0.39008817269686835,
+              "prediction_coverage": 0.08452417148069322,
+              "precision": 0.6115107913669064,
+              "recall": 0.13250194855806702,
+              "coverage_difference_pp": -30.556400121617514,
+              "false_positive_rate": 0.053838484546360914,
+              "reference_occurrence_share": 0.03647269522699491,
+              "predicted_occurrence_share": 0.021039884961780064
+            },
+            "amber": {
+              "tp": 140,
+              "fp": 101,
+              "fn": 761,
+              "tn": 2287,
+              "reference_count": 901,
+              "predicted_count": 241,
+              "reference_coverage": 0.27394344785649133,
+              "prediction_coverage": 0.0732745515354211,
+              "precision": 0.5809128630705395,
+              "recall": 0.15538290788013318,
+              "coverage_difference_pp": -20.066889632107024,
+              "false_positive_rate": 0.042294807370184255,
+              "reference_occurrence_share": 0.025613326889729084,
+              "predicted_occurrence_share": 0.018239612502838114
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 1.201265688531342,
+              "fp": 0.34570124124500745,
+              "fn": 21.798734311468777,
+              "tn": 28.654298758754816,
+              "reference_count": 23.00000000000012,
+              "predicted_count": 1.5469669297763495,
+              "reference_coverage": 0.44230769230769545,
+              "prediction_coverage": 0.029749364034160626,
+              "precision": 0.776529649993884,
+              "recall": 0.05222894297962329,
+              "coverage_difference_pp": -41.25583282735349,
+              "false_positive_rate": 0.011920732456724467,
+              "reference_occurrence_share": 0.03993055555555545,
+              "predicted_occurrence_share": 0.007432566715282953
+            },
+            "musk": {
+              "tp": 2.6297776976237213,
+              "fp": 1.6171068776312996,
+              "fn": 17.370222302376334,
+              "tn": 30.382893122368664,
+              "reference_count": 20.000000000000057,
+              "predicted_count": 4.246884575255021,
+              "reference_coverage": 0.38461538461538647,
+              "prediction_coverage": 0.08167085721644286,
+              "precision": 0.6192251404585927,
+              "recall": 0.13148888488118568,
+              "coverage_difference_pp": -30.29445273989436,
+              "false_positive_rate": 0.05053458992597817,
+              "reference_occurrence_share": 0.03472222222222204,
+              "predicted_occurrence_share": 0.02040460744836514
+            },
+            "amber": {
+              "tp": 2.391108623910202,
+              "fp": 1.7273280548396217,
+              "fn": 13.60889137608985,
+              "tn": 34.27267194516037,
+              "reference_count": 16.000000000000053,
+              "predicted_count": 4.118436678749823,
+              "reference_coverage": 0.3076923076923093,
+              "prediction_coverage": 0.07920070536057368,
+              "precision": 0.580586472592323,
+              "recall": 0.14944428899438714,
+              "coverage_difference_pp": -22.849160233173563,
+              "false_positive_rate": 0.04798133485665617,
+              "reference_occurrence_share": 0.02777777777777765,
+              "predicted_occurrence_share": 0.01978746590394268
+            }
+          }
+        },
+        "Finetuned": {
+          "mean_list_count": 10.018850714502888,
+          "mean_unique_count": 9.876254180602007,
+          "mean_reference_count": 10.69534813013074,
+          "mean_false_positive_count": 6.784737002128306,
+          "mean_false_negative_count": 7.603830951657039,
+          "scores": {
+            "precision": 0.3297778717773169,
+            "recall": 0.29942430785160834,
+            "f1": 0.29477759555211974
+          },
+          "occurrence_totals": {
+            "tp": 10168,
+            "fp": 22315,
+            "fn": 25009
+          },
+          "focus_share_of_predicted_occurrences": 0.24880706831265584,
+          "labels": {
+            "bergamot": {
+              "tp": 1230,
+              "fp": 1598,
+              "fn": 133,
+              "tn": 328,
+              "reference_count": 1363,
+              "predicted_count": 2828,
+              "reference_coverage": 0.4144116752812405,
+              "prediction_coverage": 0.8598358163575555,
+              "precision": 0.4349363507779349,
+              "recall": 0.9024211298606016,
+              "coverage_difference_pp": 44.5424141076315,
+              "false_positive_rate": 0.829698857736241,
+              "reference_occurrence_share": 0.038746908491343775,
+              "predicted_occurrence_share": 0.08706092417572268
+            },
+            "musk": {
+              "tp": 1177,
+              "fp": 1707,
+              "fn": 106,
+              "tn": 299,
+              "reference_count": 1283,
+              "predicted_count": 2884,
+              "reference_coverage": 0.39008817269686835,
+              "prediction_coverage": 0.8768622681666159,
+              "precision": 0.4081137309292649,
+              "recall": 0.9173811379579111,
+              "coverage_difference_pp": 48.677409546974765,
+              "false_positive_rate": 0.8509471585244267,
+              "reference_occurrence_share": 0.03647269522699491,
+              "predicted_occurrence_share": 0.08878490287227166
+            },
+            "amber": {
+              "tp": 683,
+              "fp": 1687,
+              "fn": 218,
+              "tn": 701,
+              "reference_count": 901,
+              "predicted_count": 2370,
+              "reference_coverage": 0.27394344785649133,
+              "prediction_coverage": 0.720583764062025,
+              "precision": 0.2881856540084388,
+              "recall": 0.758046614872364,
+              "coverage_difference_pp": 44.66403162055336,
+              "false_positive_rate": 0.7064489112227805,
+              "reference_occurrence_share": 0.025613326889729084,
+              "predicted_occurrence_share": 0.07296124126466151
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 20.800669953932246,
+              "fp": 24.45541950882665,
+              "fn": 2.199330046067864,
+              "tn": 4.544580491173263,
+              "reference_count": 23.00000000000011,
+              "predicted_count": 45.256089462758894,
+              "reference_coverage": 0.4423076923076953,
+              "prediction_coverage": 0.870309412745365,
+              "precision": 0.4596214609096762,
+              "recall": 0.904376954518789,
+              "coverage_difference_pp": 42.80017204376697,
+              "false_positive_rate": 0.8432903278905767,
+              "reference_occurrence_share": 0.039930555555555435,
+              "predicted_occurrence_share": 0.08734984571429724
+            },
+            "musk": {
+              "tp": 18.208703031347138,
+              "fp": 27.125016890080364,
+              "fn": 1.7912969686529032,
+              "tn": 4.874983109919632,
+              "reference_count": 20.000000000000043,
+              "predicted_count": 45.3337199214275,
+              "reference_coverage": 0.3846153846153862,
+              "prediction_coverage": 0.8718023061812997,
+              "precision": 0.4016591416479058,
+              "recall": 0.910435151567355,
+              "coverage_difference_pp": 48.71869215659136,
+              "false_positive_rate": 0.8476567778150115,
+              "reference_occurrence_share": 0.03472222222222202,
+              "predicted_occurrence_share": 0.08749968209362058
+            },
+            "amber": {
+              "tp": 12.058635718990686,
+              "fp": 25.552724650429855,
+              "fn": 3.9413642810093528,
+              "tn": 10.447275349570171,
+              "reference_count": 16.00000000000004,
+              "predicted_count": 37.61136036942054,
+              "reference_coverage": 0.30769230769230904,
+              "prediction_coverage": 0.7232953917196271,
+              "precision": 0.32061152802106074,
+              "recall": 0.753664732436916,
+              "coverage_difference_pp": 41.560308402731806,
+              "false_positive_rate": 0.7097979069563843,
+              "reference_occurrence_share": 0.027777777777777627,
+              "predicted_occurrence_share": 0.07259457377724206
+            }
+          }
+        }
+      },
+      "focus_share_of_reference_occurrences": 0.10083293060806778
+    },
+    "level_2": {
+      "n_reviews": 1832,
+      "n_perfumes": 52,
+      "models": {
+        "Base": {
+          "mean_list_count": 3.3351528384279474,
+          "mean_unique_count": 3.1473799126637556,
+          "mean_reference_count": 10.654475982532752,
+          "mean_false_positive_count": 2.5223799126637556,
+          "mean_false_negative_count": 10.029475982532752,
+          "scores": {
+            "precision": 0.24267864443901563,
+            "recall": 0.0722201077446592,
+            "f1": 0.10370390810035286
+          },
+          "occurrence_totals": {
+            "tp": 1145,
+            "fp": 4621,
+            "fn": 18374
+          },
+          "focus_share_of_predicted_occurrences": 0.0346860908775581,
+          "labels": {
+            "bergamot": {
+              "tp": 16,
+              "fp": 2,
+              "fn": 758,
+              "tn": 1056,
+              "reference_count": 774,
+              "predicted_count": 18,
+              "reference_coverage": 0.42248908296943233,
+              "prediction_coverage": 0.009825327510917031,
+              "precision": 0.8888888888888888,
+              "recall": 0.020671834625323,
+              "coverage_difference_pp": -41.26637554585153,
+              "false_positive_rate": 0.001890359168241966,
+              "reference_occurrence_share": 0.039653670782314666,
+              "predicted_occurrence_share": 0.003121748178980229
+            },
+            "musk": {
+              "tp": 57,
+              "fp": 38,
+              "fn": 648,
+              "tn": 1089,
+              "reference_count": 705,
+              "predicted_count": 95,
+              "reference_coverage": 0.384825327510917,
+              "prediction_coverage": 0.05185589519650655,
+              "precision": 0.6,
+              "recall": 0.08085106382978724,
+              "coverage_difference_pp": -33.29694323144105,
+              "false_positive_rate": 0.03371783496007098,
+              "reference_occurrence_share": 0.03611865361955018,
+              "predicted_occurrence_share": 0.016475893166840096
+            },
+            "amber": {
+              "tp": 45,
+              "fp": 42,
+              "fn": 471,
+              "tn": 1274,
+              "reference_count": 516,
+              "predicted_count": 87,
+              "reference_coverage": 0.2816593886462882,
+              "prediction_coverage": 0.047489082969432314,
+              "precision": 0.5172413793103449,
+              "recall": 0.0872093023255814,
+              "coverage_difference_pp": -23.41703056768559,
+              "false_positive_rate": 0.031914893617021274,
+              "reference_occurrence_share": 0.026435780521543113,
+              "predicted_occurrence_share": 0.015088449531737774
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 0.45420117625119655,
+              "fp": 0.05,
+              "fn": 22.54579882374889,
+              "tn": 28.950000000000088,
+              "reference_count": 23.000000000000085,
+              "predicted_count": 0.5042011762511965,
+              "reference_coverage": 0.44230769230769024,
+              "prediction_coverage": 0.009696176466369083,
+              "precision": 0.9008332341234173,
+              "recall": 0.01974787722831282,
+              "coverage_difference_pp": -43.261151584132115,
+              "false_positive_rate": 0.0017241379310344775,
+              "reference_occurrence_share": 0.03993055555555561,
+              "predicted_occurrence_share": 0.0031032877397769204
+            },
+            "musk": {
+              "tp": 1.5772512312881266,
+              "fp": 0.9711324543974734,
+              "fn": 18.4227487687119,
+              "tn": 31.02886754560273,
+              "reference_count": 20.00000000000003,
+              "predicted_count": 2.5483836856856,
+              "reference_coverage": 0.38461538461538197,
+              "prediction_coverage": 0.04900737857087652,
+              "precision": 0.6189221976846055,
+              "recall": 0.07886256156440621,
+              "coverage_difference_pp": -33.56080060445054,
+              "false_positive_rate": 0.03034788919992085,
+              "reference_occurrence_share": 0.03472222222222219,
+              "predicted_occurrence_share": 0.01568494525704089
+            },
+            "amber": {
+              "tp": 1.3480803706914648,
+              "fp": 1.3071079340875293,
+              "fn": 14.651919629308562,
+              "tn": 34.69289206591262,
+              "reference_count": 16.00000000000003,
+              "predicted_count": 2.655188304778994,
+              "reference_coverage": 0.30769230769230566,
+              "prediction_coverage": 0.05106131355344177,
+              "precision": 0.5077155425342509,
+              "recall": 0.0842550231682164,
+              "coverage_difference_pp": -25.663099413886393,
+              "false_positive_rate": 0.036308553724653435,
+              "reference_occurrence_share": 0.027777777777777762,
+              "predicted_occurrence_share": 0.016342312753579506
+            }
+          }
+        },
+        "Finetuned": {
+          "mean_list_count": 10.055676855895197,
+          "mean_unique_count": 9.891375545851528,
+          "mean_reference_count": 10.654475982532752,
+          "mean_false_positive_count": 7.087882096069869,
+          "mean_false_negative_count": 7.850982532751091,
+          "scores": {
+            "precision": 0.30268368965536696,
+            "recall": 0.26821163942485376,
+            "f1": 0.26551115441158096
+          },
+          "occurrence_totals": {
+            "tp": 5136,
+            "fp": 12985,
+            "fn": 14383
+          },
+          "focus_share_of_predicted_occurrences": 0.2559461398377573,
+          "labels": {
+            "bergamot": {
+              "tp": 704,
+              "fp": 909,
+              "fn": 70,
+              "tn": 149,
+              "reference_count": 774,
+              "predicted_count": 1613,
+              "reference_coverage": 0.42248908296943233,
+              "prediction_coverage": 0.8804585152838428,
+              "precision": 0.43645381277123374,
+              "recall": 0.9095607235142119,
+              "coverage_difference_pp": 45.79694323144105,
+              "false_positive_rate": 0.8591682419659735,
+              "reference_occurrence_share": 0.039653670782314666,
+              "predicted_occurrence_share": 0.08901274764085867
+            },
+            "musk": {
+              "tp": 659,
+              "fp": 996,
+              "fn": 46,
+              "tn": 131,
+              "reference_count": 705,
+              "predicted_count": 1655,
+              "reference_coverage": 0.384825327510917,
+              "prediction_coverage": 0.9033842794759825,
+              "precision": 0.39818731117824774,
+              "recall": 0.9347517730496454,
+              "coverage_difference_pp": 51.85589519650655,
+              "false_positive_rate": 0.8837622005323869,
+              "reference_occurrence_share": 0.03611865361955018,
+              "predicted_occurrence_share": 0.09133050052425362
+            },
+            "amber": {
+              "tp": 401,
+              "fp": 969,
+              "fn": 115,
+              "tn": 347,
+              "reference_count": 516,
+              "predicted_count": 1370,
+              "reference_coverage": 0.2816593886462882,
+              "prediction_coverage": 0.7478165938864629,
+              "precision": 0.2927007299270073,
+              "recall": 0.7771317829457365,
+              "coverage_difference_pp": 46.61572052401747,
+              "false_positive_rate": 0.736322188449848,
+              "reference_occurrence_share": 0.026435780521543113,
+              "predicted_occurrence_share": 0.075602891672645
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 21.005407125745972,
+              "fp": 24.997531335848226,
+              "fn": 1.9945928742541106,
+              "tn": 4.0024686641518175,
+              "reference_count": 23.00000000000008,
+              "predicted_count": 46.0029384615942,
+              "reference_coverage": 0.4423076923076902,
+              "prediction_coverage": 0.8846718934921888,
+              "precision": 0.4566101172707141,
+              "recall": 0.9132785706846043,
+              "coverage_difference_pp": 44.23642011844986,
+              "false_positive_rate": 0.8619838391671789,
+              "reference_occurrence_share": 0.0399305555555556,
+              "predicted_occurrence_share": 0.08877316719657595
+            },
+            "musk": {
+              "tp": 18.523582412372797,
+              "fp": 28.084214890687228,
+              "fn": 1.4764175876272314,
+              "tn": 3.9157851093129463,
+              "reference_count": 20.00000000000003,
+              "predicted_count": 46.607797303060025,
+              "reference_coverage": 0.38461538461538197,
+              "prediction_coverage": 0.8963037942896084,
+              "precision": 0.3974352680073262,
+              "recall": 0.9261791206186385,
+              "coverage_difference_pp": 51.168840967422646,
+              "false_positive_rate": 0.877631715333971,
+              "reference_occurrence_share": 0.03472222222222219,
+              "predicted_occurrence_share": 0.08994038035424415
+            },
+            "amber": {
+              "tp": 12.44898275722525,
+              "fp": 26.746880570484933,
+              "fn": 3.5510172427747673,
+              "tn": 9.253119429515126,
+              "reference_count": 16.000000000000018,
+              "predicted_count": 39.195863327710185,
+              "reference_coverage": 0.3076923076923055,
+              "prediction_coverage": 0.7537666024559588,
+              "precision": 0.3176096072471053,
+              "recall": 0.7780614223265773,
+              "coverage_difference_pp": 44.60742947636533,
+              "false_positive_rate": 0.7429689047356914,
+              "reference_occurrence_share": 0.02777777777777774,
+              "predicted_occurrence_share": 0.07563736241566112
+            }
+          }
+        }
+      },
+      "focus_share_of_reference_occurrences": 0.10220810492340796
+    },
+    "level_3": {
+      "n_reviews": 1457,
+      "n_perfumes": 52,
+      "models": {
+        "Base": {
+          "mean_list_count": 5.501029512697324,
+          "mean_unique_count": 5.111187371310913,
+          "mean_reference_count": 10.746739876458477,
+          "mean_false_positive_count": 3.5374056280027455,
+          "mean_false_negative_count": 9.172958133150308,
+          "scores": {
+            "precision": 0.32992065042632285,
+            "recall": 0.17216118050000953,
+            "f1": 0.2110592701177458
+          },
+          "occurrence_totals": {
+            "tp": 2293,
+            "fp": 5154,
+            "fn": 13365
+          },
+          "focus_share_of_predicted_occurrences": 0.05572713844501141,
+          "labels": {
+            "bergamot": {
+              "tp": 57,
+              "fp": 21,
+              "fn": 532,
+              "tn": 847,
+              "reference_count": 589,
+              "predicted_count": 78,
+              "reference_coverage": 0.40425531914893614,
+              "prediction_coverage": 0.053534660260809885,
+              "precision": 0.7307692307692307,
+              "recall": 0.0967741935483871,
+              "coverage_difference_pp": -35.07206588881263,
+              "false_positive_rate": 0.024193548387096774,
+              "reference_occurrence_share": 0.03761655383829352,
+              "predicted_occurrence_share": 0.01047401638243588
+            },
+            "musk": {
+              "tp": 113,
+              "fp": 70,
+              "fn": 465,
+              "tn": 809,
+              "reference_count": 578,
+              "predicted_count": 183,
+              "reference_coverage": 0.39670555936856555,
+              "prediction_coverage": 0.12560054907343857,
+              "precision": 0.6174863387978142,
+              "recall": 0.19550173010380623,
+              "coverage_difference_pp": -27.110501029512697,
+              "false_positive_rate": 0.07963594994311718,
+              "reference_occurrence_share": 0.036914037552688725,
+              "predicted_occurrence_share": 0.024573653820330336
+            },
+            "amber": {
+              "tp": 95,
+              "fp": 59,
+              "fn": 290,
+              "tn": 1013,
+              "reference_count": 385,
+              "predicted_count": 154,
+              "reference_coverage": 0.26424159231297184,
+              "prediction_coverage": 0.10569663692518874,
+              "precision": 0.6168831168831169,
+              "recall": 0.24675324675324675,
+              "coverage_difference_pp": -15.85449553877831,
+              "false_positive_rate": 0.05503731343283582,
+              "reference_occurrence_share": 0.024588069996168093,
+              "predicted_occurrence_share": 0.0206794682422452
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 2.263253039819118,
+              "fp": 0.7790020502082925,
+              "fn": 20.73674696018096,
+              "tn": 28.220997949791702,
+              "reference_count": 23.000000000000078,
+              "predicted_count": 3.0422550900274103,
+              "reference_coverage": 0.44230769230769135,
+              "prediction_coverage": 0.05850490557744987,
+              "precision": 0.7439392729551572,
+              "recall": 0.09840230607909176,
+              "coverage_difference_pp": -38.38027867302415,
+              "false_positive_rate": 0.02686213966235492,
+              "reference_occurrence_share": 0.039930555555555844,
+              "predicted_occurrence_share": 0.011502251393941279
+            },
+            "musk": {
+              "tp": 3.796579719976857,
+              "fp": 2.61939415211489,
+              "fn": 16.20342028002317,
+              "tn": 29.38060584788521,
+              "reference_count": 20.00000000000003,
+              "predicted_count": 6.415973872091747,
+              "reference_coverage": 0.384615384615383,
+              "prediction_coverage": 0.12338411292484061,
+              "precision": 0.5917386503849787,
+              "recall": 0.1898289859988426,
+              "coverage_difference_pp": -26.12312716905424,
+              "false_positive_rate": 0.08185606725359006,
+              "reference_occurrence_share": 0.034722222222222404,
+              "predicted_occurrence_share": 0.02425771088547779
+            },
+            "amber": {
+              "tp": 3.884512560768016,
+              "fp": 2.1450061810081147,
+              "fn": 12.115487439231998,
+              "tn": 33.85499381899194,
+              "reference_count": 16.000000000000014,
+              "predicted_count": 6.029518741776131,
+              "reference_coverage": 0.30769230769230627,
+              "prediction_coverage": 0.11595228349569417,
+              "precision": 0.6442491892186648,
+              "recall": 0.24278203504800078,
+              "coverage_difference_pp": -19.17400241966121,
+              "false_positive_rate": 0.059583505028003095,
+              "reference_occurrence_share": 0.027777777777777908,
+              "predicted_occurrence_share": 0.022796589470662928
+            }
+          }
+        },
+        "Finetuned": {
+          "mean_list_count": 9.97254632807138,
+          "mean_unique_count": 9.857240905971175,
+          "mean_reference_count": 10.746739876458477,
+          "mean_false_positive_count": 6.40356897735072,
+          "mean_false_negative_count": 7.293067947838023,
+          "scores": {
+            "precision": 0.3638455050288009,
+            "recall": 0.3386704358940341,
+            "f1": 0.3315765798825708
+          },
+          "occurrence_totals": {
+            "tp": 5032,
+            "fp": 9330,
+            "fn": 10626
+          },
+          "focus_share_of_predicted_occurrences": 0.23979947082579028,
+          "labels": {
+            "bergamot": {
+              "tp": 526,
+              "fp": 689,
+              "fn": 63,
+              "tn": 179,
+              "reference_count": 589,
+              "predicted_count": 1215,
+              "reference_coverage": 0.40425531914893614,
+              "prediction_coverage": 0.8339052848318462,
+              "precision": 0.43292181069958846,
+              "recall": 0.8930390492359932,
+              "coverage_difference_pp": 42.964996568291006,
+              "false_positive_rate": 0.793778801843318,
+              "reference_occurrence_share": 0.03761655383829352,
+              "predicted_occurrence_share": 0.08459824536972567
+            },
+            "musk": {
+              "tp": 518,
+              "fp": 711,
+              "fn": 60,
+              "tn": 168,
+              "reference_count": 578,
+              "predicted_count": 1229,
+              "reference_coverage": 0.39670555936856555,
+              "prediction_coverage": 0.8435140700068634,
+              "precision": 0.42148087876322216,
+              "recall": 0.8961937716262975,
+              "coverage_difference_pp": 44.680851063829785,
+              "false_positive_rate": 0.8088737201365188,
+              "reference_occurrence_share": 0.036914037552688725,
+              "predicted_occurrence_share": 0.08557303996657847
+            },
+            "amber": {
+              "tp": 282,
+              "fp": 718,
+              "fn": 103,
+              "tn": 354,
+              "reference_count": 385,
+              "predicted_count": 1000,
+              "reference_coverage": 0.26424159231297184,
+              "prediction_coverage": 0.6863417982155113,
+              "precision": 0.282,
+              "recall": 0.7324675324675325,
+              "coverage_difference_pp": 42.21002059025395,
+              "false_positive_rate": 0.6697761194029851,
+              "reference_occurrence_share": 0.024588069996168093,
+              "predicted_occurrence_share": 0.06962818548948614
+            }
+          },
+          "perfume_equal_focus": {
+            "bergamot": {
+              "tp": 20.663025141664654,
+              "fp": 23.70375634070541,
+              "fn": 2.336974858335404,
+              "tn": 5.296243659294579,
+              "reference_count": 23.000000000000057,
+              "predicted_count": 44.366781482370065,
+              "reference_coverage": 0.4423076923076909,
+              "prediction_coverage": 0.8532073361994196,
+              "precision": 0.4657318933507827,
+              "recall": 0.8983923974636784,
+              "coverage_difference_pp": 41.089964389172856,
+              "false_positive_rate": 0.8173709083001869,
+              "reference_occurrence_share": 0.0399305555555558,
+              "predicted_occurrence_share": 0.0854217292824444
+            },
+            "musk": {
+              "tp": 17.765502544482533,
+              "fp": 25.98519963272869,
+              "fn": 2.234497455517512,
+              "tn": 6.014800367271337,
+              "reference_count": 20.000000000000046,
+              "predicted_count": 43.750702177211224,
+              "reference_coverage": 0.38461538461538336,
+              "prediction_coverage": 0.8413596572540573,
+              "precision": 0.4060621123867628,
+              "recall": 0.8882751272241246,
+              "coverage_difference_pp": 45.67442726386739,
+              "false_positive_rate": 0.8120374885227709,
+              "reference_occurrence_share": 0.03472222222222243,
+              "predicted_occurrence_share": 0.08423555895718186
+            },
+            "amber": {
+              "tp": 11.434867220755857,
+              "fp": 24.21276744487666,
+              "fn": 4.5651327792441565,
+              "tn": 11.787232555123367,
+              "reference_count": 16.000000000000014,
+              "predicted_count": 35.647634665632516,
+              "reference_coverage": 0.30769230769230627,
+              "prediction_coverage": 0.6855314358775445,
+              "precision": 0.3207749217588365,
+              "recall": 0.7146792012972404,
+              "coverage_difference_pp": 37.78391281852383,
+              "false_positive_rate": 0.6725768734687956,
+              "reference_occurrence_share": 0.027777777777777908,
+              "predicted_occurrence_share": 0.06863429115716134
+            }
+          }
+        }
+      },
+      "focus_share_of_reference_occurrences": 0.09911866138715034
+    }
+  }
+}

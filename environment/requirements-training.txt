@@ -1,0 +1,8 @@
+unsloth==2026.7.2
+unsloth_zoo==2026.7.2
+transformers==5.5.0
+trl==0.24.0
+peft==0.19.1
+datasets==4.3.0
+accelerate==1.14.0
+modelscope>=1.20

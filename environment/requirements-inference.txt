@@ -1,0 +1,3 @@
+vllm==0.24.0
+transformers==5.13.0
+modelscope>=1.20
